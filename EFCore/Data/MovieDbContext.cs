@@ -25,9 +25,9 @@ namespace EFCore.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Studio>()
-                .HasOne(s => s.StudioDetails)
-                .WithMany(c => c.Studio)
-                .HasForeignKey(s => s.CountryId);
+                 .HasOne(s => s.Country)
+                 .WithMany(c => c.Studios)
+                 .HasForeignKey(s => s.CountryId);
 
             modelBuilder.Entity<StudioDetails>()
                 .HasOne(sd => sd.Studio)
