@@ -9,15 +9,15 @@ namespace EFCore.Data
     internal class MovieDbContext : DbContext
     {
         //dbset - list collection of entities in the database
-        public DbSet<Models.Entities.Movie> Movies { get; set; }
-        public DbSet<Models.Entities.Actor> Actors { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Actor> Actors { get; set; }
         public DbSet<Country> Countries { get; set; }
         public DbSet<Studio> Studios { get; set; }
         public DbSet<StudioDetails> StudioDetails { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=MovieEF;Trusted_Connection=true;Encrypt=false;");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=MovieEF;Trusted_Connection=true;TrustServerCertificate=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

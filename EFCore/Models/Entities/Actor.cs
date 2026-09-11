@@ -10,10 +10,10 @@ namespace EFCore.Models.Entities
       public int Id { get; set; }
         [Required]
         [MaxLength(100)]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
         [Required]
         [MaxLength(100)]
-        public string lastName { get; set; }
+        public string LastName { get; set; }
 
         public ICollection<Movie> Movies { get; set; }
 
